@@ -8,28 +8,28 @@ function AddItems(props) {
 
 
     return (
-        <div className="card  border border-dark">
-            <div className="card-header">
+        <div className="card  border border-dark bg-light">
+            <div className="card-header bg-info">
                 Add Items
             </div>
             <div className="card-body">
                 {foodInfo.map((item, index) => {
 
-                        return (<FoodButton
-                            key={item.id}
-                            name={item.name}
-                            price={item.price}
-                            addFunc={() => props.addFunc(item.id)}
-                        />)
-                    })
+                    return (<FoodButton
+                        key={item.id}
+                        name={item.name}
+                        price={item.price}
+                        addFunc={() => props.addFunc(item.id, '+')}
+                    />)
+                })
                 }
 
 
-                </div>
             </div>
-            )
+        </div>
+    )
 
 
-            }
+}
 
-            export default AddItems
+export default AddItems

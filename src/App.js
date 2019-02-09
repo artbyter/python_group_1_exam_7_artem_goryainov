@@ -6,43 +6,39 @@ import AddItems from './Components/AddItems'
 
 class App extends Component {
 
-    foodNames = ['Hamburger', 'Coffee', 'Cheesburger', 'Tea', 'Fries', 'Cola'];
-
+    foodNames = ['Hamburger', 'Coffee', 'Cheeseburger', 'Tea', 'Fries', 'Cola'];
+    foodPrices=[100,60,120,30,80,50];
     constructor(props) {
         super(props)
         //TODO make functional generation
+        let items=[];
+        this.foodNames.forEach((item,index)=>items.push({id:index, name:item,price:this.foodPrices[index],count:0}))
         this.state = {
-            food: [
-                // {Hamburger: {id: 1, name:"Hamburger", price: 100, count: 0}},
-                // {Coffee: {id: 2, name:'Coffee', price: 60, count: 0}},
-                // {Cheeseburger: {id: 3, name: 'Cheeseburger', price: 120, count: 0}},
-                // {Tea: {id: 4, name: 'Tea', price: 30, count: 0}},
-                // {Fries: {id: 5, name: 'Fries', price: 80, count: 0}},
-                // {Cola: {id: 6, name: 'Cola', price: 50, count: 0}},
-
-                 {id: 1, name:"Hamburger", price: 100, count: 0},
-                {id: 2, name:'Coffee', price: 60, count: 0},
-                {id: 3, name: 'Cheeseburger', price: 120, count: 0},
-                {id: 4, name: 'Tea', price: 30, count: 0},
-                {id: 5, name: 'Fries', price: 80, count: 0},
-                {id: 6, name: 'Cola', price: 50, count: 0},
-            ],
+            food:items,
             Total: 0
 
         }
 
+
     }
 
-    addItem = (id) => {
+    changeItem = (id, op) => {
         let index = this.state.food.findIndex(item => item.id === id);
-        let food = {...this.state.food[index], count: this.state.food[index].count+1};
+        let food = {...this.state.food[index]};
         let foods = [...this.state.food];
         let total = this.state.Total;
-        let state={...this.state}
-        foods[index] = food;
+        let state = {...this.state}
 
-        state.food=foods;
-        state.Total=total+this.state.food[index].price;
+        if (op == '+') {
+            food.count++;
+            state.Total = total + this.state.food[index].price;
+        } else {
+            food.count--;
+            state.Total = total - this.state.food[index].price;
+        }
+        foods[index] = food;
+        state.food = foods;
+
 
         this.setState(state);
         console.log(this.state)
@@ -53,12 +49,12 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="container">
-                    <div className="row  ">
+                    <div className="row ">
                         <div className="col-5 ">
-                            <OrderDetails foodInfo={this.state}/>
+                            <OrderDetails foodInfo={this.state} remFunc={this.changeItem}/>
                         </div>
                         <div className="col-7">
-                            <AddItems foodInfo={this.state.food} addFunc={this.addItem}/>
+                            <AddItems foodInfo={this.state.food} addFunc={this.changeItem}/>
                         </div>
                     </div>
                 </div>

@@ -4,9 +4,12 @@ function OrderLine(props) {
 
 
     return (
-        <div>
-            <p className='d-inline-block'>{props.name}  x{props.count} {props.price*props.count}KGS</p>
-            <a className='pl-2' href='#'><i className="fas fa-times"></i></a>
+        <div className='w-100'>
+            <p className='d-inline-block col-5  text-left'>{props.name}  </p>
+            <p className='d-inline-block col-2 p-0 text-left'>x{props.count} </p>
+            <p className='d-inline-block col-3 p-0 text-left'>{props.price * props.count}KGS</p>
+            <a className='pl-2 text-decoration-none col-1' href='#' onClick={() => props.remFunc(props.id, '-')}><i
+                className="fas fa-times"></i></a>
         </div>
     )
 
