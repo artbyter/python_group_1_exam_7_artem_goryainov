@@ -1,4 +1,6 @@
 import React from 'react'
+import OrderLine from './OrderLine'
+import OrderTotal from './OrderTotal'
 
 class OrderDetails extends React.Component{
 
@@ -9,7 +11,13 @@ class OrderDetails extends React.Component{
                 Order details
             </div>
             <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
+                <OrderLine/>
+                <OrderLine/>
+                <OrderLine/>
+                <OrderLine/>
+                <OrderLine/>
+                <OrderTotal/>
+
 
             </div>
         </div>

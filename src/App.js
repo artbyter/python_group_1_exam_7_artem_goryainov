@@ -9,8 +9,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <div className="row">
-            <div className="col-5">
+          <div className="row  ">
+            <div className="col-5 ">
               <OrderDetails/>
             </div>
             <div className="col-7">

@@ -1,4 +1,5 @@
 import React from 'react'
+import FoodButton from './FoodButton'
 
 class AddItems extends React.Component{
 
@@ -8,7 +9,12 @@ class AddItems extends React.Component{
                 Add Items
             </div>
             <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
+                <FoodButton/>
+                <FoodButton/>
+                <FoodButton/>
+                <FoodButton/>
+                <FoodButton/>
+                <FoodButton/>
 
             </div>
         </div>)
