@@ -6,3 +6,8 @@
   width: 48%;
 }
 
+.foodButton:hover{
+  background-color: aqua;
+cursor: pointer;
+box-shadow: 5px 5px 15px -2px #000000;
+}
