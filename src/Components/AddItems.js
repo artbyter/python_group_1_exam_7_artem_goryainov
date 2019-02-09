@@ -3,7 +3,7 @@ import FoodButton from './FoodButton'
 
 function AddItems(props) {
 
-    console.log(props.foodInfo);
+
     const foodInfo = props.foodInfo;
 
 

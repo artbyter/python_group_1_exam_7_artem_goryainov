@@ -37,13 +37,15 @@ class App extends Component {
         let index = this.state.food.findIndex(item => item.id === id);
         let food = {...this.state.food[index], count: this.state.food[index].count+1};
         let foods = [...this.state.food];
-        let total = {...this.state, Total: this.state.Total+1};
+        let total = this.state.Total;
         let state={...this.state}
         foods[index] = food;
-        console.log(foods)
+
         state.food=foods;
-        state.Total=total;
+        state.Total=total+this.state.food[index].price;
+
         this.setState(state);
+        console.log(this.state)
 
     }
 
