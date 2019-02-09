@@ -1,8 +1,8 @@
 import React from 'react'
 
-class FoodButton extends React.Component {
+function FoodButton(props) {
 
-    render() {
+
         return (
             <div className="foodButton border border-dark rounded-pill m-1 d-inline-block">
                 <div className='container-fluid'>
@@ -18,7 +18,6 @@ class FoodButton extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default FoodButton

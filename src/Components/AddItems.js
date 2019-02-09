@@ -1,9 +1,9 @@
 import React from 'react'
 import FoodButton from './FoodButton'
 
-class AddItems extends React.Component{
+function AddItems(props) {
 
-    render() { return (
+    return (
         <div className="card  border border-dark">
             <div className="card-header">
                 Add Items
@@ -18,7 +18,7 @@ class AddItems extends React.Component{
 
             </div>
         </div>)
-    }
+
 
 }
 

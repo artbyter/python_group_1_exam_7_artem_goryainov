@@ -2,10 +2,9 @@ import React from 'react'
 import OrderLine from './OrderLine'
 import OrderTotal from './OrderTotal'
 
-class OrderDetails extends React.Component{
+function OrderDetails(props) {
 
-    render() {
-        return(
+    return (
         <div className="card border border-dark">
             <div className="card-header">
                 Order details
@@ -21,8 +20,8 @@ class OrderDetails extends React.Component{
 
             </div>
         </div>
-        )
-    }
+    )
+
 
 }
 
