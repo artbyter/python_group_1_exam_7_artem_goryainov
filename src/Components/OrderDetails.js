@@ -10,12 +10,8 @@ function OrderDetails(props) {
                 Order details
             </div>
             <div className="card-body">
-                <OrderLine/>
-                <OrderLine/>
-                <OrderLine/>
-                <OrderLine/>
-                <OrderLine/>
-                <OrderTotal/>
+                <p>Order is empty! Please add some items</p>
+                
 
 
             </div>

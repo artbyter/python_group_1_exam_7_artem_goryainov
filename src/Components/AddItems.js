@@ -3,23 +3,33 @@ import FoodButton from './FoodButton'
 
 function AddItems(props) {
 
+    console.log(props.foodInfo);
+    const foodInfo = props.foodInfo;
+
+
     return (
         <div className="card  border border-dark">
             <div className="card-header">
                 Add Items
             </div>
             <div className="card-body">
-                <FoodButton/>
-                <FoodButton/>
-                <FoodButton/>
-                <FoodButton/>
-                <FoodButton/>
-                <FoodButton/>
+                {foodInfo.map((item, index) => {
 
+                        return (<FoodButton
+                            key={item.id}
+                            name={item.name}
+                            price={item.price}
+                            addFunc={() => props.addFunc(item.id)}
+                        />)
+                    })
+                }
+
+
+                </div>
             </div>
-        </div>)
+            )
 
 
-}
+            }
 
-export default AddItems
+            export default AddItems
